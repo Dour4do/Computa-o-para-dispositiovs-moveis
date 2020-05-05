@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My CRUD in NodeJS</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/2.0.6/stylesheets/locastyle.css">
+</head>
+<body class="p-3 mb-2 bg-dark">
+ 
+  <h2 class="text-white bg-dark">Alterar Registro</h2>
+  <% data.forEach(function(details) { %>
+    <form action="/edit/<%= details._id %>" method="POST">
+      <label class="text-primary bg-dark">Nome</label>
+      <input type="text" value="<%= details.name %>" name="name" class="form-control">
+      <label class="text-primary bg-dark">Sobrenome</label>
+      <input type="text" value="<%= details.surname %>" name="surname" class="form-control">
+      <label class="text-primary bg-dark">Data de nascimento</label>
+      <input type="date" value="<%= details.age %>" name="age" class="form-control">
+      <label class="text-primary bg-dark">Sexo</label><br/>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="sex1" name="sex" value="M" class="custom-control-input">
+          <label class="text-info bg-dark custom-control-label" for="sex1">Masculino</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="sex2" name="sex" value="F" class="custom-control-input">
+          <label  class="text-info bg-dark custom-control-label" for="sex2">Feminino</label >
+        </div><br/>
+      <label class="text-primary bg-dark">Telefone</label>
+      <input type="text" value="<%= details.phone %>" name="phone" class="form-control phone-ddd-mask"> 
+      <label class="text-primary bg-dark">Email</label>
+      <input type="email" value="<%= details.mail %>" name="mail" class="form-control">
+      <label class="text-primary bg-dark">CEP</label>
+      <input type="text" value="<%= details.CEP %>" name="CEP" class="form-control cep-mask">
+      <label class="text-primary bg-dark">Nacionalidade</label>
+      <input type="text" value="<%= details.country %>" name="country" class="form-control">
+      <label class="text-primary bg-dark">CPF</label>
+      <input type="text" value="<%= details.CPF %>" name="CPF" class="form-control cpf-mask" >
+      <label class="text-primary bg-dark">RG</label>
+      <input type="number" value="<%= details.grau %>" name="rg" class="form-control">
+      <br />
+      <a href="/show" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Todos</a>
+      <button type="submit" type="button" class="btn btn-light btn-lg">Editar</button>
+    </form>
+  <% }) %>
+  <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript" src="//assets.locaweb.com.br/locastyle/2.0.6/javascripts/locastyle.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>  
+</body>
+</html>
