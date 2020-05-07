@@ -8,13 +8,12 @@
   <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/2.0.6/stylesheets/locastyle.css">
 </head>
 <body class="p-3 mb-2 bg-dark">
-
   <h2 class="text-white bg-dark">Registrar</h2>
     <form action="/show" method="POST">
-      <label class="text-primary bg-dark">Nome</label>
-      <input type="text" placeholder="Ex: Gabriel" name="name" class="form-control">
-      <label class="text-primary bg-dark">Sobrenome</label>
-      <input type="text" placeholder="Ex: Duarte" name="surname" class="form-control">
+      <label class="text-primary bg-dark">Nome*</label>
+      <input type="text" placeholder="Ex: Gabriel" name="name" class="form-control" required oninvalid="alert('Campo nome é obrigatório!');">
+      <label class="text-primary bg-dark">Sobrenome*</label>
+      <input type="text" placeholder="Ex: Duarte" name="surname" class="form-control" required oninvalid="alert('Campo sobrenome é obrigatório!');">
       <label class="text-primary bg-dark">Data de Nascimento</label>
       <input type="date" name="age" class="form-control text-muted">
       <label class="text-primary bg-dark">Sexo</label><br/>
@@ -28,8 +27,8 @@
         </div><br/>
       <label class="text-primary bg-dark">Telefone</label>
       <input type="text" placeholder="Ex: (00) 0000-0000" name="phone" class="form-control phone-ddd-mask">
-      <label class="text-primary bg-dark">Email</label>
-      <input type="email" placeholder="Ex: exemplo@gmail.com" name="mail" class="form-control">
+      <label class="text-primary bg-dark">Email*</label>
+      <input type="email" placeholder="Ex: exemplo@gmail.com" name="mail" class="form-control" required oninvalid="alert('Campo email é obrigatório!');">
       <label class="text-primary bg-dark">CEP</label>
       <input type="text" placeholder="Ex: 00000-000" name="CEP" class="form-control cep-mask" >
       <label class="text-primary bg-dark">Nacionalidade</label>

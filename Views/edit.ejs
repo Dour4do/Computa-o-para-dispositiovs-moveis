@@ -12,10 +12,10 @@
   <h2 class="text-white bg-dark">Alterar Registro</h2>
   <% data.forEach(function(details) { %>
     <form action="/edit/<%= details._id %>" method="POST">
-      <label class="text-primary bg-dark">Nome</label>
-      <input type="text" value="<%= details.name %>" name="name" class="form-control">
-      <label class="text-primary bg-dark">Sobrenome</label>
-      <input type="text" value="<%= details.surname %>" name="surname" class="form-control">
+      <label class="text-primary bg-dark">Nome*</label>
+      <input type="text" value="<%= details.name %>" name="name" class="form-control" required oninvalid="alert('Campo nome é obrigatório!');">
+      <label class="text-primary bg-dark">Sobrenome*</label>
+      <input type="text" value="<%= details.surname %>" name="surname" class="form-control" required oninvalid="alert('Campo sobrenome é obrigatório!');">
       <label class="text-primary bg-dark">Data de nascimento</label>
       <input type="date" value="<%= details.age %>" name="age" class="form-control">
       <label class="text-primary bg-dark">Sexo</label><br/>
@@ -29,8 +29,8 @@
         </div><br/>
       <label class="text-primary bg-dark">Telefone</label>
       <input type="text" value="<%= details.phone %>" name="phone" class="form-control phone-ddd-mask"> 
-      <label class="text-primary bg-dark">Email</label>
-      <input type="email" value="<%= details.mail %>" name="mail" class="form-control">
+      <label class="text-primary bg-dark">Email*</label>
+      <input type="email" value="<%= details.mail %>" name="mail" class="form-control" required oninvalid="alert('Campo email é obrigatório!');">
       <label class="text-primary bg-dark">CEP</label>
       <input type="text" value="<%= details.CEP %>" name="CEP" class="form-control cep-mask">
       <label class="text-primary bg-dark">Nacionalidade</label>
@@ -40,8 +40,8 @@
       <label class="text-primary bg-dark">RG</label>
       <input type="number" value="<%= details.grau %>" name="rg" class="form-control">
       <br />
-      <a href="/show" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Todos</a>
-      <button type="submit" type="button" class="btn btn-light btn-lg">Editar</button>
+      <button type="submit" type="button" class="btn btn-light btn-lg btn-block">Editar</button>
+      <a href="/home" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">Todos</a> 
     </form>
   <% }) %>
   <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
